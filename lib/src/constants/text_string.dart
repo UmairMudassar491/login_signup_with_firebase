@@ -1,19 +1,20 @@
 const String mAppName = "Online learn Quran";
 
-const String mWelcomeScreenTitle = "Online learn Quran";
-const String mWelcomeScreenSubTitle = "Welcome to best online Quran learn App";
+const String mWelcomeScreenTitle1 = "Welcome to ";
+const String mWelcomeScreenTitle2 = "Quran Tutor";
+const String mWelcomeScreenSubTitle = "Login as Teacher or Student";
 
 const String mLogin = "Login";
 const String mLoginTitle = "Welcome Back";
 const String mLoginSubTitle = "Make it work, make it right, make it fast";
 const String mRememderMe = "Remember me?";
-const String mAlreadyHaveAnAccount = "Already Have an Account?";
+const String mAlreadyHaveAnAccount = "Already Have an Account? ";
 const String mDontHaveAnAccount = "Don't have an Account?";
 
 const String mEmail = "Email";
 const String mhintEmail = "abc@gmail.com";
 const String mPassword = "Password";
-const String mForgetPassword = "Forget Password";
+const String mForgetPassword = "Forget Password?";
 const String mSignInWithGoogle = "Sign-in with Google";
 
 const String mSignUp = "SignUp";
@@ -25,8 +26,11 @@ const String mPhoneNo = "Phone No";
 const String mGender = "Gender";
 const String mSelectGender = "Select Gender";
 const String mCity = "City";
+const String mCountry = "Country";
 const String mAge = "Age";
 const String mLanguage = "Language";
+const String mHourlyRate = "Hourly Rate";
+const String mSpecializations = "Specializations";
 const String mConfirmPassword = "Confirm Password";
 
 const String mProfileHeading = "admin";

@@ -1,6 +1,6 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:fluttertoast/fluttertoast.dart';
-import 'package:online_quran_learning/src/views/auth/models/user_model.dart';
+import 'package:login_signup/src/views/auth/models/user_model.dart';
 
 class DatabaseService {
   final String? uid;

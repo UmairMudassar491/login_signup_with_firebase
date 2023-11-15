@@ -1,6 +1,7 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
-import 'package:online_quran_learning/routes.dart';
+import 'package:login_signup/routes.dart';
+import 'package:login_signup/src/constants/colors.dart';
 import 'firebase_options.dart';
 
 Future<void> main() async {
@@ -20,7 +21,7 @@ class MyApp extends StatelessWidget {
       onGenerateRoute: Routes.generateRoute,
       initialRoute: '/',
       theme: ThemeData(
-        primarySwatch: Colors.teal,
+        colorScheme: ColorScheme.fromSeed(seedColor: primaryColor),
       ),
     );
   }

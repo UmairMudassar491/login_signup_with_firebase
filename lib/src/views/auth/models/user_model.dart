@@ -62,6 +62,7 @@ class StudentModel extends UserModel {
     required String country,
     required String city,
     required this.age,
+    String? profileUrl,
   }) : super(
           fullName: fullName,
           email: email,
@@ -71,6 +72,7 @@ class StudentModel extends UserModel {
           language: language,
           country: country,
           city: city,
+          profileUrl: profileUrl,
         );
   factory StudentModel.fromJson(Map<String, dynamic> json) {
     return StudentModel(
@@ -83,6 +85,7 @@ class StudentModel extends UserModel {
       language: json['language'],
       country: json['country'],
       city: json['city'],
+      profileUrl: json['profileUrl'],
     );
   }
 
@@ -95,7 +98,7 @@ class StudentModel extends UserModel {
 }
 
 class TutorModel extends UserModel {
-  double hourlyRate;
+  String hourlyRate;
   String specializations;
 
   TutorModel({
@@ -109,6 +112,7 @@ class TutorModel extends UserModel {
     required String city,
     required this.hourlyRate,
     required this.specializations,
+    String? profileUrl,
   }) : super(
           fullName: fullName,
           email: email,
@@ -118,6 +122,7 @@ class TutorModel extends UserModel {
           language: language,
           country: country,
           city: city,
+          profileUrl: profileUrl,
         );
   factory TutorModel.fromJson(Map<String, dynamic> json) {
     return TutorModel(
@@ -131,6 +136,7 @@ class TutorModel extends UserModel {
       language: json['language'],
       country: json['country'],
       city: json['city'],
+      profileUrl: json['profileUrl'],
     );
   }
 

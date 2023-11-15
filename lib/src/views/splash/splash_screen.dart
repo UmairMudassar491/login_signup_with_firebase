@@ -1,3 +1,4 @@
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import '../../../Helpers/helper_function.dart';
 
@@ -9,25 +10,41 @@ class SplashScreen extends StatefulWidget {
 }
 
 class _SplashScreenState extends State<SplashScreen> {
-  bool _isSignedIn = false;
+  bool _isLoading = true;
 
   @override
   void initState() {
     super.initState();
-    Future.delayed(
-      const Duration(seconds: 4),
-      () {
-        getUserLoggedInStatus().then((value) {
-          if (_isSignedIn) {
-            Navigator.pushNamedAndRemoveUntil(
-                context, "/Home", (route) => false);
-          } else {
-            Navigator.pushNamedAndRemoveUntil(
-                context, "/Welcome", (route) => false);
-          }
-        });
-      },
-    );
+    initializeFirebase();
+  }
+
+  Future<void> initializeFirebase() async {
+    await Firebase.initializeApp();
+    checkLoginStatus();
+  }
+
+  Future<void> checkLoginStatus() async {
+    bool isQariesLoggedIn = await HelperFunctions.getQariLoggedInStatus();
+    bool isUsersLoggedIn = await HelperFunctions.getUserLoggedInStatus();
+
+    await Future.delayed(const Duration(seconds: 4));
+
+    setState(() {
+      _isLoading = false;
+    });
+
+    if (isQariesLoggedIn) {
+      if (!mounted) return;
+      Navigator.pushNamedAndRemoveUntil(
+          context, "/QariHomePage", (route) => false);
+    } else if (isUsersLoggedIn) {
+      if (!mounted) return;
+      Navigator.pushNamedAndRemoveUntil(
+          context, "/StudentHomePage", (route) => false);
+    } else {
+      if (!mounted) return;
+      Navigator.pushNamedAndRemoveUntil(context, "/Welcome", (route) => false);
+    }
   }
 
   @override
@@ -42,21 +59,21 @@ class _SplashScreenState extends State<SplashScreen> {
               height: MediaQuery.of(context).size.width / 2.5,
               width: MediaQuery.of(context).size.width / 2.5,
             ),
-            const Padding(
-              padding: EdgeInsets.only(top: 30),
-              child: CircularProgressIndicator.adaptive(),
+            Padding(
+              padding: const EdgeInsets.only(top: 30),
+              child: _isLoading
+                  ? const CircularProgressIndicator.adaptive()
+                  : const Text(
+                      'Splash Screen',
+                      style: TextStyle(
+                          fontSize: 24,
+                          fontWeight: FontWeight.w400,
+                          color: Colors.teal),
+                    ),
             )
           ],
         ),
       ),
     );
-  }
-
-  Future<void> getUserLoggedInStatus() async {
-    await HelperFunctions.getUserLoggedInStatus().then((value) {
-      if (value != null) {
-        _isSignedIn = value;
-      }
-    });
   }
 }

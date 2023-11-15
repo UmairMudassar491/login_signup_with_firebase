@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:online_quran_learning/src/constants/image_string.dart';
-import 'package:online_quran_learning/src/constants/text_string.dart';
+import 'package:login_signup/src/constants/image_string.dart';
+import 'package:login_signup/src/constants/text_string.dart';
 
 class SignUpQariHeaderWidget extends StatelessWidget {
   const SignUpQariHeaderWidget({super.key, required this.size});

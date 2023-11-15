@@ -1,7 +1,8 @@
 import 'package:firebase_auth/firebase_auth.dart';
-import 'package:online_quran_learning/src/views/auth/models/user_model.dart';
-import 'package:online_quran_learning/src/views/auth/repository/authantication_repository/database_service.dart';
-import 'package:online_quran_learning/src/views/auth/repository/exceptions/signup_email_password_failure.dart';
+import 'package:login_signup/Helpers/helper_function.dart';
+import 'package:login_signup/src/views/auth/models/user_model.dart';
+import 'package:login_signup/src/views/auth/repository/authantication_repository/database_service.dart';
+import 'package:login_signup/src/views/auth/repository/exceptions/signup_email_password_failure.dart';
 
 class AuthRepository {
   final FirebaseAuth auth = FirebaseAuth.instance;
@@ -77,6 +78,8 @@ class AuthRepository {
   Future<void> signOut() async {
     try {
       await auth.signOut();
+      await HelperFunctions.removeUserLoggedInStatus();
+      await HelperFunctions.removeQariLoggedInStatus();
     } catch (e) {
       // ignore: avoid_returning_null_for_void
       return null;

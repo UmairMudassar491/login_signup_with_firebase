@@ -1,6 +1,6 @@
 {
-    "name": "online_quran_learning",
-    "short_name": "online_quran_learning",
+    "name": "login_signup",
+    "short_name": "login_signup",
     "start_url": ".",
     "display": "standalone",
     "background_color": "#0175C2",

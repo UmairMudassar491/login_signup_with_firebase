@@ -1,4 +1,4 @@
-package com.example.online_quran_learning
+package com.example.login_signup
 
 import io.flutter.embedding.android.FlutterActivity
 
