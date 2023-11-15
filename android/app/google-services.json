@@ -1,0 +1,46 @@
+{
+  "project_info": {
+    "project_number": "1016289559471",
+    "project_id": "online-quran-learning-8e069",
+    "storage_bucket": "online-quran-learning-8e069.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1016289559471:android:05e7a58933ec8ced0ae55a",
+        "android_client_info": {
+          "package_name": "com.example.online_quran_learning"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1016289559471-knppsg5reucrmika4uv9jrshgc4hephm.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC7WywHeZC_vTA7e1BmC5yrUyHsq6g8GW0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1016289559471-knppsg5reucrmika4uv9jrshgc4hephm.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "1016289559471-379fn09sejo0cosbirodp4ndp0g7m0cn.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.onlineQuranLearning"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
